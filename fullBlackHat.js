@@ -3,14 +3,14 @@ function main(){
     var canvasHeight = 600;
     var margin = 200;
 
-    var svg = d3.select("#black").append("svg")
+    var svg1 = d3.select("#black").append("svg")
         .attr("width",  canvasWidth)
         .attr("height", canvasHeight)
 
-    var width = svg.attr("width") - margin;
-    var height = svg.attr("height") - margin;
+    var width = svg1.attr("width") - margin;
+    var height = svg1.attr("height") - margin;
 
-    svg.append("text")
+    svg1.append("text")
         .attr("transform", "translate(100, 0)")
         .attr("x", 85)
         .attr("y", 50)
@@ -20,7 +20,7 @@ function main(){
     var yScale = d3.scaleLinear().range([height, 0]); // scale linear working with two quantitative variables numbers. working with ticks
     var color = d3.scaleOrdinal().range(["#FF0000", "#00FF00", "#0000FF"])
 
-    var container_g = svg.append("g")
+    var container_g1 = svg1.append("g")
         .attr("transform",
             "translate(" + 100 + ", " + 100 + ")");
 
@@ -35,7 +35,7 @@ function main(){
 
         // Draw bars!
 
-        container_g.selectAll(".bar")
+        container_g1.selectAll(".bar")
             .data(data)
             .enter().append("rect")
             .attr("class", "bar")
@@ -46,7 +46,7 @@ function main(){
             .attr("height", function(d) {return height - yScale(d.Players); });
 
 
-        container_g.selectAll("text")
+        container_g1.selectAll("text")
             .data(data)
             .enter().append("text")
             // .text(function(d) {return d.Price})
@@ -54,7 +54,7 @@ function main(){
             .attr("y", function(d) {return yScale(d.Players); })
 
         // Display the X-axis
-        container_g.append("g")
+        container_g1.append("g")
             .attr("transform", "translate(0, " + height + ")")
             .call(d3.axisBottom(xScale))
             .append("text")
@@ -63,7 +63,7 @@ function main(){
             .attr("stroke", "black")
 
         // Display the Y-axis
-        container_g.append("g")
+        container_g1.append("g")
             .call(d3.axisLeft(yScale).tickFormat(function(d) {
                 return d;
             }).ticks(5))
