@@ -1,4 +1,5 @@
- var canvasWidth = 600;
+function main(){
+  var canvasWidth = 600;
     var canvasHeight = 600;
     var margin = 200;
 
@@ -74,3 +75,4 @@
             .attr("stroke", "black")
             .text("Player Count")
     })
+}
