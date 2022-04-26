@@ -3,7 +3,7 @@ function main(){
     var canvasHeight = 600;
     var margin = 200;
 
-    var svg = d3.select("body").append("svg")
+    var svg = d3.select("#white").append("svg")
         .attr("width",  canvasWidth)
         .attr("height", canvasHeight)
 
