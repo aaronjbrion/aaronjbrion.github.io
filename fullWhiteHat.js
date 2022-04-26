@@ -76,3 +76,5 @@ function main(){
             .text("Player Count")
     })
 }
+
+main()
