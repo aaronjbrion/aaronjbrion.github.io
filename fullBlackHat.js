@@ -1,4 +1,5 @@
-var canvasWidth = 600;
+function main(){
+    var canvasWidth = 600;
     var canvasHeight = 600;
     var margin = 200;
 
@@ -73,3 +74,6 @@ var canvasWidth = 600;
             .attr("dy", "-5.1em")
             .attr("stroke", "black")
     })
+}
+
+
